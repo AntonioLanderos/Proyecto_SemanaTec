@@ -1,5 +1,7 @@
 # Proyecto_SemanaTec
 
+## Actividad Memory
+
 🔢 Reduced the board size from an 8x8 grid (64 tiles) to a 4x4 grid (16 tiles), using only 8 pairs.
 
 🎯 Updated the coordinate logic in the index() and xy() functions to work with the new 4-column layout.
