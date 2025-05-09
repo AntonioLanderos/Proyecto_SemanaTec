@@ -1,12 +1,11 @@
-
 from random import *
 from turtle import *
 from freegames import path
 
 car = path('car.gif')
-tiles = list(range(32)) * 2
+tiles = list(range(8)) * 2  # Solo 8 pares
 state = {'mark': None}
-hide = [True] * 64
+hide = [True] * 16  # Solo 16 casillas
 pairs_found = 0  # Contador de pares descubiertos
 
 
@@ -24,13 +23,13 @@ def square(x, y):
 
 
 def index(x, y):
-    """Convert (x, y) coordinates to tiles index."""
-    return int((x + 200) // 50 + ((y + 200) // 50) * 8)
+    """Convert (x, y) coordinates to tiles index for 4x4 grid."""
+    return int((x + 100) // 50 + ((y + 100) // 50) * 4)
 
 
 def xy(count):
-    """Convert tiles count to (x, y) coordinates."""
-    return (count % 8) * 50 - 200, (count // 8) * 50 - 200
+    """Convert tiles count to (x, y) coordinates for 4x4 grid."""
+    return (count % 4) * 50 - 100, (count // 4) * 50 - 100
 
 
 def tap(x, y):
@@ -57,11 +56,11 @@ def draw():
 
     # Mostrar número de pares descubiertos
     up()
-    goto(-180, 180)
+    goto(-90, 110)
     color('black')
-    write(f'Pares descubiertos: {pairs_found}', font=('Arial', 16, 'normal'))
+    write(f'Pares descubiertos: {pairs_found}', font=('Arial', 14, 'normal'))
 
-    for count in range(64):
+    for count in range(16):
         if hide[count]:
             x, y = xy(count)
             square(x, y)
@@ -78,16 +77,16 @@ def draw():
     # Verificar si se terminaron de descubrir todos los pares
     if all(not h for h in hide):
         up()
-        goto(-100, 0)
+        goto(-60, 0)
         color('green')
-        write('¡Has ganado!', font=('Arial', 24, 'bold'))
+        write('¡Has ganado!', font=('Arial', 20, 'bold'))
 
     update()
     ontimer(draw, 100)
 
 
 shuffle(tiles)
-setup(420, 420, 370, 0)
+setup(220, 240, 370, 0)  # Ajuste al tamaño del tablero 4x4
 addshape(car)
 hideturtle()
 tracer(False)
