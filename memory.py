@@ -3,10 +3,10 @@ from turtle import *
 from freegames import path
 
 car = path('car.gif')
-tiles = list(range(8)) * 2  # Solo 8 pares
+tiles = list(range(8)) * 2  # Only 8 pairs
 state = {'mark': None}
-hide = [True] * 16  # Solo 16 casillas
-pairs_found = 0  # Contador de pares descubiertos
+hide = [True] * 16  # Only 16 tiles
+pairs_found = 0  # Counter for found pairs
 
 
 def square(x, y):
@@ -16,7 +16,7 @@ def square(x, y):
     down()
     color('black', 'white')
     begin_fill()
-    for count in range(4):
+    for _ in range(4):
         forward(50)
         left(90)
     end_fill()
@@ -44,7 +44,7 @@ def tap(x, y):
         hide[spot] = False
         hide[mark] = False
         state['mark'] = None
-        pairs_found += 1  # Aumenta contador al encontrar un par
+        pairs_found += 1  # Increment counter when a pair is found
 
 
 def draw():
@@ -54,7 +54,7 @@ def draw():
     shape(car)
     stamp()
 
-    # Mostrar número de pares descubiertos
+    # Display the number of discovered pairs
     up()
     goto(-90, 110)
     color('black')
@@ -74,7 +74,7 @@ def draw():
         color('black')
         write(tiles[mark], font=('Arial', 30, 'normal'))
 
-    # Verificar si se terminaron de descubrir todos los pares
+    # Check if all pairs have been revealed
     if all(not h for h in hide):
         up()
         goto(-60, 0)
@@ -86,7 +86,7 @@ def draw():
 
 
 shuffle(tiles)
-setup(220, 240, 370, 0)  # Ajuste al tamaño del tablero 4x4
+setup(220, 240, 370, 0)  # Adjust screen size for 4x4 grid
 addshape(car)
 hideturtle()
 tracer(False)
