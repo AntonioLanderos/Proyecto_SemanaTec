@@ -18,6 +18,7 @@ car = path('car.gif')
 tiles = list(range(32)) * 2
 state = {'mark': None}
 hide = [True] * 64
+pairs_found = 0  # Contador de pares descubiertos
 
 
 def square(x, y):
@@ -45,6 +46,7 @@ def xy(count):
 
 def tap(x, y):
     """Update mark and hidden tiles based on tap."""
+    global pairs_found
     spot = index(x, y)
     mark = state['mark']
 
@@ -54,6 +56,7 @@ def tap(x, y):
         hide[spot] = False
         hide[mark] = False
         state['mark'] = None
+        pairs_found += 1  # Aumenta contador al encontrar un par
 
 
 def draw():
@@ -62,6 +65,12 @@ def draw():
     goto(0, 0)
     shape(car)
     stamp()
+
+    # Mostrar número de pares descubiertos
+    up()
+    goto(-180, 180)
+    color('black')
+    write(f'Pares descubiertos: {pairs_found}', font=('Arial', 16, 'normal'))
 
     for count in range(64):
         if hide[count]:
