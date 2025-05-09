@@ -1,18 +1,20 @@
-""" Tic Tac Toe 
+""" Tic Tac Toe
 
 Mejoras implementadas:
-1. Cambio de colores a los simbolos 
-2. Líneas más gruesas (ancho 6) para mejor visibilidad
-3. Posicionamiento y dimension optimizada de los símbolos
-4. Documentación del código
-
+1.Se agregó una matriz board para registrar movimientos
+2.Se agrego una función get_board_index() para convertir coordenadas a índices
+3.Vericación antes de dibujar (if board[row][col] is not None)
+4. Mejora en la documentación
+5. Mensaje en terminal de cuando se selecciona una casilla ocupada
+6. Estructura mejorada
+7. Mantiene las características existentes
 """
 
 import turtle
 from freegames import line
 
 def grid():
-    """Draw tic-tac-toe grid with 4 lines forming 3x3 squares"""
+    """Dibuja el tablero"""
     line(-67, 200, -67, -200)
     line(67, 200, 67, -200)
     line(-200, -67, 200, -67)
@@ -51,7 +53,7 @@ def tap(x, y):
     turtle.update()
     state['player'] = not player
 
-# Inicialización del juego 
+# Inicialización del juego
 turtle.setup(420, 420, 370, 0)
 turtle.hideturtle()
 turtle.tracer(False)
