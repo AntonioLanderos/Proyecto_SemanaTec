@@ -23,3 +23,4 @@
 - **Triangle Size**: modify the `size` parameter in `pellet_triangle()`.
 - **Ghost Speed**: change the vectors in the `ghosts` list.
 
+![image](https://github.com/user-attachments/assets/2e7b5506-c56e-4135-8f72-8845c3e02d50)
