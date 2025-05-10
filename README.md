@@ -1,24 +1,25 @@
 # Proyecto_SemanaTec
 
-## 📋 Cambios a Pacman
+## 📋 Changes to Pacman
 
-### 🎮 Nuevo diseño de “comida”
-- Se reemplazó el punto (`dot`) por **triángulos equiláteros** para representar las píldoras.
-- Función `pellet_triangle(x, y, size)` centrada en cada casilla, con tamaño configurable.
+### 🎮 New “Food” Design
+- The dot (`dot`) has been replaced with **equilateral triangles** to represent the pellets.
+- The `pellet_triangle(x, y, size)` function is centered in each tile, with a configurable size.
 
-### 👻 Fantasmas más veloces
-- Incremento de la velocidad de los fantasmas: los vectores de movimiento pasan de ±5 a **±10** unidades.
-- Al chocar contra un muro, el fantasma elige al azar una nueva dirección igual de rápida.
+### 👻 Faster Ghosts
+- Ghost speed increased: movement vectors changed from ±5 to **±10** units.
+- When hitting a wall, a ghost randomly chooses a new direction at the same speed.
 
-### 🛠 Reestructuración y docstrings PEP 8
-- Separación clara de importaciones (estándar, terceros).
-- Docstrings detallados en todas las funciones:
-  - Descripción.
-  - Parámetros (`Args`).
-  - Valor de retorno (`Returns`), cuando aplica.
-- Líneas limitadas a ≤ 79 caracteres y uso de nombres descriptivos.
-- Agrupación lógica de bloques (configuración, utilidades, dibujo, lógica de juego, inicio).
+### 🛠 Refactoring and PEP 8 Docstrings
+- Clear separation of imports (standard, third-party).
+- Detailed docstrings in all functions:
+  - Description.
+  - Parameters (`Args`).
+  - Return value (`Returns`), when applicable.
+- Lines limited to ≤ 79 characters and use of descriptive names.
+- Logical grouping of code blocks (setup, utilities, rendering, game logic, startup).
 
-### ⚙️ Cómo ajustar
-- **Tamaño del triángulo**: modifica el parámetro `size` en `pellet_triangle()`.
-- **Velocidad de fantasmas**: cambia los vectores en la lista `ghosts`.
+### ⚙️ How to Adjust
+- **Triangle Size**: modify the `size` parameter in `pellet_triangle()`.
+- **Ghost Speed**: change the vectors in the `ghosts` list.
+
