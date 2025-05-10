@@ -27,7 +27,7 @@
   - Flake8
 - Documentación del código
 
-## 📋 Changes to Pacman
+## 📋 Changes to Pacman - Juan Antonio Landeros Velázquez A00574000
 
 ### 🎮 New “Food” Design
 - The dot (`dot`) has been replaced with **equilateral triangles** to represent the pellets.
